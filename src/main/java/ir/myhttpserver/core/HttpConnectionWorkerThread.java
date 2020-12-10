@@ -46,11 +46,6 @@ public class HttpConnectionWorkerThread extends Thread {
                             CRLF + CRLF;
             outputStream.write(response.getBytes());
 
-            try{
-                sleep(5000);// add this to show request didnt go to queue of serverSocket after implement this class
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             LOGGER.info("Connection processing finished.");
         }catch (IOException e){
             LOGGER.error("problem with communication.",e);
